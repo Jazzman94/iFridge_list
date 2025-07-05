@@ -1,3 +1,3 @@
 # iFridge_list
 
-streamlit run app.py
+streamlit run streamlit_app.py
