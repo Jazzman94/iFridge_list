@@ -1,31 +1,34 @@
 import pandas as pd
-from pandas.api.types import is_bool_dtype, is_numeric_dtype
-
+from datetime import datetime
 from nicegui import ui
 
-df = pd.DataFrame(data={
-    'col1': [x for x in range(4)],
-    'col2': ['This', 'column', 'contains', 'strings.'],
-    'col3': [x / 4 for x in range(4)],
-    'col4': [True, False, True, False],
-})
+from config import DATE_FORMAT, COLUMNS_DEFAULTS, ROW_SELECTION
 
+# Load the CSV file with date parsing parse_dates=["Input date", "Expiry date"]
+df = pd.read_csv("data/fridge_list.csv")
 
-def update(*, df: pd.DataFrame, r: int, c: int, value):
-    df.iat[r, c] = value
-    ui.notify(f'Set ({r}, {c}) to {value}')
+def save_df():
+    df.to_csv("data/fridge_list.csv", index=False, date_format=DATE_FORMAT)
+    ui.notify("Fridge List saved successfully!")
 
+def add_row():
+    new_row = {
+        "Item": "",
+        "Category": "",
+        "Input date": datetime.now().strftime(DATE_FORMAT),
+        "Expiry date": ""
+    }
+    df.loc[len(df)] = new_row
+    grid.options["rowData"] = df.to_dict('records')
+    grid.run_grid_method('applyTransaction', {'add': [new_row]})
 
-with ui.grid(rows=len(df.index)+1).classes('grid-flow-col'):
-    for c, col in enumerate(df.columns):
-        ui.label(col).classes('font-bold')
-        for r, row in enumerate(df.loc[:, col]):
-            if is_bool_dtype(df[col].dtype):
-                cls = ui.checkbox
-            elif is_numeric_dtype(df[col].dtype):
-                cls = ui.number
-            else:
-                cls = ui.input
-            cls(value=row, on_change=lambda event, r=r, c=c: update(df=df, r=r, c=c, value=event.value))
+ui.label("Fridge List").style("font-size: 24px; font-weight: bold;")
+grid = ui.aggrid.from_pandas(df).props("virtual-scroll").style("height: 500px; width: 100%")
 
-ui.run()
+grid.options['columnDefs'] = COLUMNS_DEFAULTS
+grid.options['rowSelection'] = ROW_SELECTION
+
+ui.button("Add Row", on_click=add_row)
+ui.button("Save Changes", on_click=save_df)
+
+ui.run(port = 8089)
