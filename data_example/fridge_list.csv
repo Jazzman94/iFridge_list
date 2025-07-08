@@ -1,0 +1,26 @@
+Item,Category,Price,Volume/Weight,Input date,Expiry date
+Apple,Fruits,200,1000,28/05/2025,11/04/2025
+Eggs,Eggs,500,800,28/01/2025,10/04/2025
+Eggplant,Vegetables,400,1100,28/06/2025,29/04/2025
+Milk,Dairy,100,500,29/12/2024,05/04/2025
+Chicken Breast,Meat,800,1200,15/03/2025,20/03/2025
+Yogurt,Dairy,150,400,10/02/2025,25/02/2025
+Bananas,Fruits,180,600,05/07/2025,12/07/2025
+Broccoli,Vegetables,320,800,22/01/2025,30/01/2025
+Cheese,Dairy,450,300,18/04/2025,15/05/2025
+Carrots,Vegetables,250,900,12/06/2025,28/06/2025
+Salmon,Fish,1200,500,03/03/2025,06/03/2025
+Bread,Bakery,80,400,07/07/2025,10/07/2025
+Butter,Dairy,300,250,25/01/2025,08/03/2025
+Oranges,Fruits,220,800,14/05/2025,28/05/2025
+Spinach,Vegetables,180,200,19/02/2025,24/02/2025
+Ground Beef,Meat,950,800,08/04/2025,12/04/2025
+Tomatoes,Vegetables,350,700,30/06/2025,08/07/2025
+Rice,Grains,120,1000,01/01/2025,31/12/2025
+Pasta,Grains,95,500,15/02/2025,15/08/2025
+Onions,Vegetables,150,600,20/03/2025,15/04/2025
+Potatoes,Vegetables,200,1500,25/05/2025,25/06/2025
+Tuna,Fish,280,200,12/04/2025,12/10/2025
+Lettuce,Vegetables,120,300,06/07/2025,13/07/2025
+Strawberries,Fruits,400,500,02/07/2025,08/07/2025
+Pork Chops,Meat,750,600,16/03/2025,20/03/2025

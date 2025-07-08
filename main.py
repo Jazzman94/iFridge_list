@@ -2,22 +2,17 @@ import pandas as pd
 from datetime import datetime
 from nicegui import ui
 
-from config import DATE_FORMAT, COLUMNS_DEFAULTS, ROW_SELECTION
+from config import DATE_FORMAT, COLUMNS_DEFAULTS, ROW_SELECTION, DATA_PATH
 
-df = pd.read_csv("data/fridge_list.csv")
+df = pd.read_csv(DATA_PATH)
 
 def save_df():
-    df.to_csv("data/fridge_list.csv", index=False, date_format=DATE_FORMAT)
+    df.to_csv(DATA_PATH, index=False, date_format=DATE_FORMAT)
     ui.notify("Fridge List saved successfully!")
 
 def add_row():
     new_row = {
-        "Item": "",
-        "Category": "",
-        "Price": 0,
-        "Volume/Weight": 0,
         "Input date": datetime.now().strftime(DATE_FORMAT),
-        "Expiry date": ""
     }
     df.loc[len(df)] = new_row
     grid.options["rowData"] = df.to_dict('records')

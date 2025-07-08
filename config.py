@@ -1,3 +1,4 @@
+DATA_PATH = "data_example/fridge_list.csv"
 DATE_FORMAT = "%d/%m/%Y"
 compere_func = '''(date1, date2) => {
             if (!date1 && !date2) return 0;
@@ -9,8 +10,6 @@ compere_func = '''(date1, date2) => {
             
             return d1.localeCompare(d2);
         }'''
-
-
 COLUMNS_DEFAULTS = [
     {'headerName': 'Item', 'field': 'Item', 'editable': True, 'checkboxSelection': True},
     {'headerName': 'Category', 'field': 'Category', 'editable': True},
