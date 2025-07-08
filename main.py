@@ -15,6 +15,8 @@ def add_row():
     new_row = {
         "Item": "",
         "Category": "",
+        "Price": "",
+        "Volume/Weight": "",
         "Input date": datetime.now().strftime(DATE_FORMAT),
         "Expiry date": ""
     }
