@@ -5,7 +5,7 @@ uv run main.py
 # 🛠 Project TODOs:
 - [x] FIX: sorting of Input Date, Expiry Date
 - [x] FEAT: Add columns for PRICE, VOLUME/WEIGHT
-- [ ] FEAT: Add predefined options for CATEGORIES
+- [x] FEAT: Add predefined options for CATEGORIES
 - [ ] FEAT: Add remove button of selected rows
 - [ ] FEAT: Add authorization for future accessing through internet
 - [ ] DOCS: Describe better project in README.md
