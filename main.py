@@ -4,7 +4,6 @@ from nicegui import ui
 
 from config import DATE_FORMAT, COLUMNS_DEFAULTS, ROW_SELECTION
 
-# Load the CSV file with date parsing parse_dates=["Input date", "Expiry date"]
 df = pd.read_csv("data/fridge_list.csv")
 
 def save_df():
@@ -15,8 +14,8 @@ def add_row():
     new_row = {
         "Item": "",
         "Category": "",
-        "Price": "",
-        "Volume/Weight": "",
+        "Price": 0,
+        "Volume/Weight": 0,
         "Input date": datetime.now().strftime(DATE_FORMAT),
         "Expiry date": ""
     }
