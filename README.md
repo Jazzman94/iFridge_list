@@ -1,5 +1,7 @@
 # iFridge_list
 
+currently shifting project from [Streamlit](https://streamlit.io/) to more versatile [NiceGUI](https://nicegui.io/) 
+
 uv run main.py
 
 # 🛠 Project TODOs:
