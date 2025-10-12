@@ -3,3 +3,4 @@ data/*
 __pycache__
 
 fridge_list.csv
+config.py
