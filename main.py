@@ -39,9 +39,8 @@ def index():
         }
         
         df.loc[len(df)] = new_row
-        
         grid.options['rowData'] = df.to_dict('records')
-        grid.update()
+        grid.run_grid_method('applyTransaction', {'add': [new_row]})
         
         ui.notify("Row added", type='info')
     
