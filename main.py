@@ -10,23 +10,22 @@ def index():
     global df
     
     async def sync_grid_to_df():
-        """Synchronizuje data z gridu do DataFrame"""
+        """Synchronizes data from the grid to the DataFrame"""
         global df
-        # Získáme všechna data z gridu pomocí get_client_data
         client_data = await grid.get_client_data()
         if client_data:
             df = pd.DataFrame(client_data)
         
     async def save_df():
-        """Uloží DataFrame do CSV"""
+        """Saves the DataFrame to CSV"""
         await sync_grid_to_df()
         df.to_csv(DATA_PATH, index=False, date_format=DATE_FORMAT)
         ui.notify("Fridge List saved successfully!", type='positive')
     
     async def add_row():
-        """Přidá nový řádek"""
+        """Adds a new empty row to the grid"""
         global df
-        await sync_grid_to_df()  # Nejprve synchronizujeme aktuální stav
+        await sync_grid_to_df()
         
         new_id = df["id"].max() + 1 if "id" in df.columns and not df.empty else 1
         new_row = {
@@ -39,39 +38,32 @@ def index():
             "Expiry date": datetime.now().strftime(DATE_FORMAT),
         }
         
-        # Přidáme do DataFrame
         df.loc[len(df)] = new_row
         
-        # Aktualizujeme celý grid
         grid.options['rowData'] = df.to_dict('records')
         grid.update()
         
         ui.notify("Row added", type='info')
     
     async def delete_selected_rows():
-        """Smaže vybrané řádky"""
+        """Deletes selected rows"""
         global df
-        # Získáme vybrané řádky
         selected = await grid.get_selected_rows()
         
         if not selected:
             ui.notify("No rows selected", type='warning')
             return
         
-        # Získáme ID vybraných řádků
         selected_ids = [row['id'] for row in selected if 'id' in row]
         
-        # Smažeme z DataFrame
         df = df[~df['id'].isin(selected_ids)]
-        df = df.reset_index(drop=True)  # Resetujeme index
+        df = df.reset_index(drop=True)
         
-        # Aktualizujeme celý grid s novými daty
         grid.options['rowData'] = df.to_dict('records')
         grid.update()
         
         ui.notify(f"Deleted {len(selected)} row(s)", type='positive')
     
-    # UI komponenty
     ui.label("Fridge List").style("font-size: 24px; font-weight: bold;")
     
     grid = ui.aggrid({
