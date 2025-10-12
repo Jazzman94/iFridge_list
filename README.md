@@ -8,7 +8,7 @@ uv run main.py
 - [x] FIX: sorting of Input Date, Expiry Date
 - [x] FEAT: Add columns for PRICE, VOLUME/WEIGHT
 - [x] FEAT: Add predefined options for CATEGORIES
-- [ ] FEAT: Add remove button of selected rows
+- [x] FEAT: Add remove button of selected rows
 - [ ] FEAT: Add authorization for future accessing through internet
 - [ ] DOCS: Describe better project in README.md
 - [ ] REFACTOR Data Managment of Pandas Data Frame, nested in Class

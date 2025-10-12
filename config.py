@@ -27,6 +27,7 @@ CATEGORIES = [
 ]
 
 COLUMNS_DEFAULTS = [
+    {'headerName': 'id', 'field': 'id', 'hide': True},
     {'headerName': 'Item', 'field': 'Item', 'editable': True, 'checkboxSelection': True},
     {
         'headerName': 'Category', 
