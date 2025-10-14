@@ -1,6 +1,23 @@
-.venv
-data/*
-__pycache__
+.env
 
-fridge_list.csv
-config.py
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# NiceGUI storage
+.nicegui/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
