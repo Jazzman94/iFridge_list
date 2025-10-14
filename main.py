@@ -49,10 +49,7 @@ def index():
         new_row = {
             "id": int(new_id),
             "Item": "",
-            "Category": "Fruits",
-            "Price": 0.0,
-            "Volume/Weight": 0.0,
-            "Input date": datetime.now().strftime(DATE_FORMAT),
+            "Quantity": 1,
             "Expiry date": datetime.now().strftime(DATE_FORMAT),
         }
         
@@ -92,6 +89,7 @@ def index():
         'rowData': row_data,
         'rowSelection': ROW_SELECTION,
         ':getRowId': '(params) => params.data.id',
+        'singleClickEdit': True,
     }).classes('ag-theme-alpine').style("height: 500px; width: 100%")
     
     with ui.row():  
