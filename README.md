@@ -14,3 +14,5 @@ uv run main.py
 - [x] REFACTOR Data Managment of Pandas Data Frame, nested in Class
 
 
+Install:
+sudo docker-compose up --build
