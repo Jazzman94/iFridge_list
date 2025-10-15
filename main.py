@@ -4,7 +4,8 @@ Starts NiceGUI server with authentication
 """
 from nicegui import ui
 from auth import STORAGE_SECRET
-from pages import login_page, index_page
+from pages.login_page import login_page
+from pages.main_page import index_page
 
 # Pages are automatically registered by @ui.page decorator
 # login_page -> /login

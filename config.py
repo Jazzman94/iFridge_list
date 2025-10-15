@@ -12,21 +12,6 @@ comparator_func = '''(date1, date2) => {
             return d1.localeCompare(d2);
         }'''
 
-# Predefined categories
-CATEGORIES = [
-    "Fruits",
-    "Vegetables", 
-    "Dairy",
-    "Meat",
-    "Fish",
-    "Fish",
-    "Eggs",
-    "Bakery",
-    "Grains",
-    "Beverages",
-    "Snacks"
-]
-
 COLUMNS_DEFAULTS = [
     {'headerName': 'id', 'field': 'id', 'hide': True},
     {'headerName': 'Item', 'field': 'Item', 'editable': True, 'checkboxSelection': True},
