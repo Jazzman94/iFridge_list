@@ -13,14 +13,15 @@ comparator_func = '''(date1, date2) => {
         }'''
 
 COLUMNS_DEFAULTS = [
-    {'headerName': 'id', 'field': 'id', 'hide': True},
-    {'headerName': 'Item', 'field': 'Item', 'editable': True, 'checkboxSelection': True},
-    {'headerName': 'Quantity', 'field': 'Quantity', 'editable': True, 'type': 'numericColumn'},
+    {'headerName': 'id', 'field': 'id', 'checkboxSelection': True, 'width': 40},
+    {'headerName': 'Item', 'field': 'Item', 'editable': True, 'flex': 1},
+    {'headerName': 'Quantity', 'field': 'Quantity', 'editable': True, 'type': 'numericColumn', 'width': 50},
     {
         'headerName': 'Expiry date', 
         'field': 'Expiry date', 
         'editable': True,
         ':comparator': comparator_func,
+        'width': 100,
     },
 ]
 

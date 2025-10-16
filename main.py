@@ -6,10 +6,15 @@ from nicegui import ui
 from auth import STORAGE_SECRET
 from pages.login_page import login_page
 from pages.main_page import index_page
+from pages.settings_page import settings_page
+from pages.stats_page import stats_page
 
 # Pages are automatically registered by @ui.page decorator
 # login_page -> /login
 # index_page -> /
+# settings_page -> /settings
+# stats_page -> /stats
+
 
 if __name__ in {"__main__", "__mp_main__"}:
     ui.run(

@@ -44,8 +44,9 @@ uv run main.py
 - [x] FEAT: Add authorization for future accessing through internet
 - [x] DOCS: Describe better project in README.md
 - [x] REFACTOR: Data Managment of Pandas Data Frame, nested in Class
-- [ ] REFACTOR: data, data_example, config, config_example
-- [ ] BUGFIX: datapath in Docker and config example
-- [ ] REFACTOR: reduce number of columns, remove categories from .csv
+- [x] REFACTOR: data, data_example, config, config_example
+- [x] BUGFIX: datapath in Docker and config example
+- [x] REFACTOR: reduce number of columns, remove categories from .csv
+- [x] REFACTOR: columns width
 - [ ] FEAT: add .csv for fridge, ivar
 - [ ] FEAT: add possibility to add items as .csv file/dialogue
