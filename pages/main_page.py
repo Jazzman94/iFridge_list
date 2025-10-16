@@ -2,12 +2,12 @@
 UI pages module (login, main page)
 """
 from nicegui import ui
-from auth import (is_authenticated, require_auth, logout, 
-                  get_current_user, USERS)
-from data import (load_dataframe, save_dataframe, create_new_row, 
-                  delete_rows_by_ids)
-from config import COLUMNS_DEFAULTS, ROW_SELECTION
 import pandas as pd
+
+from auth import require_auth, logout, get_current_user
+from data import load_dataframe, save_dataframe, create_new_row, delete_rows_by_ids
+from config import COLUMNS_DEFAULTS, ROW_SELECTION
+
 
 # Global DataFrame
 df = load_dataframe()
