@@ -6,11 +6,11 @@ import pandas as pd
 
 from auth import require_auth, logout, get_current_user
 from data import load_dataframe, save_dataframe, create_new_row, delete_rows_by_ids
-from config import COLUMNS_DEFAULTS, ROW_SELECTION
+from config import COLUMNS_DEFAULTS, ROW_SELECTION, DATA_PATH
 
 
 # Global DataFrame
-df = load_dataframe()
+df = load_dataframe(DATA_PATH)
 
 
 # ============= MAIN PAGE =============
@@ -21,9 +21,9 @@ def index_page():
     
     # Check authentication
     require_auth()
-    
-    df = load_dataframe()
-    
+
+    df = load_dataframe(DATA_PATH)
+
     # ============= CALLBACK FUNCTIONS =============
     async def sync_grid_to_df():
         """Synchronize data from grid to DataFrame"""
@@ -36,7 +36,7 @@ def index_page():
     async def save_df():
         """Save DataFrame to CSV"""
         await sync_grid_to_df()
-        if save_dataframe(df):
+        if save_dataframe(df, DATA_PATH):
             ui.notify("Fridge List saved successfully!", type='positive')
         else:
             ui.notify("Error saving data!", type='negative')

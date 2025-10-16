@@ -4,27 +4,27 @@ Data operations module (loading, saving, DataFrame operations)
 import pandas as pd
 import os
 from datetime import datetime
-from config import DATE_FORMAT, DATA_PATH
+from config import DATE_FORMAT
 
-def load_dataframe() -> pd.DataFrame:
+def load_dataframe(path: str) -> pd.DataFrame:
     """
     Load DataFrame from CSV or create empty one if file doesn't exist
     
     Returns:
         DataFrame with data from CSV or empty DataFrame
     """
-    if os.path.exists(DATA_PATH):
-        df = pd.read_csv(DATA_PATH)
-        print(f"✓ Loaded {len(df)} rows from {DATA_PATH}")
+    if os.path.exists(path):
+        df = pd.read_csv(path)
+        print(f"✓ Loaded {len(df)} rows from {path}")
         print(f"✓ Columns: {df.columns.tolist()}")
         if not df.empty:
             print(f"✓ First row: {df.iloc[0].to_dict()}")
         return df
     else:
-        print(f"✗ File {DATA_PATH} not found, creating empty DataFrame")
+        print(f"✗ File {path} not found, creating empty DataFrame")
         return pd.DataFrame(columns=['id', 'Item', 'Quantity', 'Expiry date'])
 
-def save_dataframe(df: pd.DataFrame) -> bool:
+def save_dataframe(df: pd.DataFrame, path: str) -> bool:
     """
     Save DataFrame to CSV
     
@@ -35,8 +35,8 @@ def save_dataframe(df: pd.DataFrame) -> bool:
         True if save successful, False otherwise
     """
     try:
-        df.to_csv(DATA_PATH, index=False, date_format=DATE_FORMAT)
-        print(f"✓ Saved {len(df)} rows to {DATA_PATH}")
+        df.to_csv(path, index=False, date_format=DATE_FORMAT)
+        print(f"✓ Saved {len(df)} rows to {path}")
         return True
     except Exception as e:
         print(f"✗ Error saving DataFrame: {e}")
