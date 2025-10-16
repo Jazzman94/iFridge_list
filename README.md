@@ -48,5 +48,5 @@ uv run main.py
 - [x] BUGFIX: datapath in Docker and config example
 - [x] REFACTOR: reduce number of columns, remove categories from .csv
 - [x] REFACTOR: columns width
-- [ ] FEAT: add .csv for fridge, ivar
+- [x] FEAT: add .csv for fridge, cabinet, additional pages
 - [ ] FEAT: add possibility to add items as .csv file/dialogue
