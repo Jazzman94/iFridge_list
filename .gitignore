@@ -1,4 +1,5 @@
 .env
+config.py
 
 # Python
 __pycache__/
@@ -12,6 +13,9 @@ venv/
 .venv/
 env/
 ENV/
+
+# data
+data/
 
 # NiceGUI storage
 .nicegui/

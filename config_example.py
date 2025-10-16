@@ -1,5 +1,5 @@
 DATE_FORMAT = "%d.%m.%Y"
-DATA_PATH = "data/fridge.csv"
+DATA_PATH = "data_example/example.csv"
 
 comparator_func = '''(date1, date2) => {
             if (!date1 && !date2) return 0;

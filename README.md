@@ -1,8 +1,40 @@
 # iFridge_list
 
-currently shifting project from [Streamlit](https://streamlit.io/) to more versatile [NiceGUI](https://nicegui.io/) 
+# Installation:
+```bash
+cd iFridge_list
+mkdir data
+```
 
+Synchronize the packages and venv:
+```
+uv sync
+```
+
+Create .env>
+```bash
+nano .env
+```
+and fill with `USERs` and `STORAGE_SECRET`:
+
+```
+USER_admin= password_admin
+USER_xxx = password_xxx 
+USER_yyy = password_yyy
+
+STORAGE_SECRET= 
+````
+
+Compose the docker on
+
+```bash
+sudo docker-compose up --build
+```
+
+or run 
+```python
 uv run main.py
+```
 
 # 🛠 Project TODOs:
 - [x] FIX: sorting of Input Date, Expiry Date
@@ -10,9 +42,10 @@ uv run main.py
 - [x] FEAT: Add predefined options for CATEGORIES
 - [x] FEAT: Add remove button of selected rows
 - [x] FEAT: Add authorization for future accessing through internet
-- [ ] DOCS: Describe better project in README.md
-- [x] REFACTOR Data Managment of Pandas Data Frame, nested in Class
-
-
-Install:
-sudo docker-compose up --build
+- [x] DOCS: Describe better project in README.md
+- [x] REFACTOR: Data Managment of Pandas Data Frame, nested in Class
+- [ ] REFACTOR: data, data_example, config, config_example
+- [ ] BUGFIX: datapath in Docker and config example
+- [ ] REFACTOR: reduce number of columns, remove categories from .csv
+- [ ] FEAT: add .csv for fridge, ivar
+- [ ] FEAT: add possibility to add items as .csv file/dialogue
