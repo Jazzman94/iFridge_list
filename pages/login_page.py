@@ -1,7 +1,6 @@
 from nicegui import ui
 
-from auth import (is_authenticated, require_auth, login, logout, 
-                  get_current_user, USERS)
+from auth import is_authenticated, login
 
 # ============= LOGIN PAGE =============
 @ui.page('/login')
