@@ -54,6 +54,7 @@ uv run main.py
 - [ ] FEAT: add shopping list
 - [ ] FEAT: improve statistics, add database for eaten items
 - [ ] FEAT: improve usability for mobile phones
+- [ ] FEAT: add possibility to add items from camera snap of bill
 - [ ] FEAT: add semantic search
 - [ ] FEAT: add ai agent to shopping list to suggest missing food items
-- [ ] FEAT: add ideas/recipes for cooking based on food items
+- [ ] FEAT: add ideas/recipes agent ai for cooking based on food items
