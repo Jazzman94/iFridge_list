@@ -49,7 +49,7 @@ uv run main.py
 - [x] REFACTOR: reduce number of columns, remove categories from .csv
 - [x] REFACTOR: columns width
 - [x] FEAT: add .csv for fridge, cabinet, additional pages
-- [ ] FEAT: add filtering to columns default, looking through long list
+- [x] FEAT: add filtering to columns default, looking through long list
 - [ ] FEAT: add possibility to add items as .csv file/dialogue
 - [ ] FEAT: add shopping list
 - [ ] FEAT: improve statistics, add database for eaten items
