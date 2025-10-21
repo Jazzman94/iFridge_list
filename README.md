@@ -47,11 +47,16 @@ uv run main.py
 - [x] REFACTOR: data, data_example, config, config_example
 - [x] BUGFIX: datapath in Docker and config example
 - [x] REFACTOR: reduce number of columns, remove categories from .csv
+- [x] FEAT: add more pages for cabinet, freezer
 - [x] REFACTOR: columns width
+- [x] REFACTOR: app pages
 - [x] FEAT: add .csv for fridge, cabinet, additional pages
-- [x] FEAT: add filtering to columns default, looking through long list
+- [x] FEAT: add filtering to columns default, looking through long lists
+- [ ] REFACTOR: refactor global variables, pandas frames!
 - [ ] FEAT: add possibility to add items as .csv file/dialogue
-- [ ] FEAT: add shopping list
+- [ ] FEAT: add page for shopping list
+- [ ] FEAT: add page for trip list
+- [ ] FEAT: add possible moving from one list to another list
 - [ ] FEAT: improve statistics, add database for eaten items
 - [ ] FEAT: improve usability for mobile phones
 - [ ] FEAT: add possibility to add items from camera snap of bill
