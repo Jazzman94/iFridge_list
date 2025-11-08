@@ -52,6 +52,8 @@ uv run main.py
 - [x] REFACTOR: app pages
 - [x] FEAT: add .csv for fridge, cabinet, additional pages
 - [x] FEAT: add filtering to columns default, looking through long lists
+- [ ] FEAT: improve saving, schedule saver
+- [ ] FEAT: back/forward button
 - [ ] REFACTOR: refactor global variables, pandas frames!
 - [ ] FEAT: add possibility to add items as .csv file/dialogue
 - [ ] FEAT: add page for shopping list
